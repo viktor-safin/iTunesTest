@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ITunesSearchViewController" id="BYZ-38-t0r" customClass="ITunesSearchViewController" customModule="iTunesTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wbo-qd-YBi">
+                                <rect key="frame" x="0.0" y="109" width="393" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="tgW-WG-Qq3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eaP-8c-MK4"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-Xg-PxX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y0Y-T1-rQA"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-fP-KcF">
+                                <rect key="frame" x="186.66666666666666" y="428.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-MU-kgX">
+                                <rect key="frame" x="154" y="424" width="85" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wbo-qd-YBi" secondAttribute="trailing" id="5iI-pq-4s6"/>
+                            <constraint firstItem="wbb-Xg-PxX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7pp-10-TO3"/>
+                            <constraint firstItem="Rhc-MU-kgX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Uox-ao-Tdj"/>
+                            <constraint firstItem="VtF-fP-KcF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Zgw-Rr-cne"/>
+                            <constraint firstAttribute="bottom" secondItem="wbo-qd-YBi" secondAttribute="bottom" id="dna-wx-KVx"/>
+                            <constraint firstItem="wbo-qd-YBi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e7k-yR-ucM"/>
+                            <constraint firstItem="wbo-qd-YBi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="fx1-RE-QAN"/>
+                            <constraint firstItem="Rhc-MU-kgX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gWQ-bK-vIR"/>
+                            <constraint firstItem="VtF-fP-KcF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iOI-xb-Q9A"/>
+                            <constraint firstItem="wbb-Xg-PxX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l57-gV-lrS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbb-Xg-PxX" secondAttribute="trailing" id="nEW-z6-QPe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ibActivityIndicator" destination="VtF-fP-KcF" id="6bX-bi-odq"/>
+                        <outlet property="ibDataLabel" destination="Rhc-MU-kgX" id="OKt-ug-Trv"/>
+                        <outlet property="ibSearchBar" destination="wbb-Xg-PxX" id="dgi-4l-cK5"/>
+                        <outlet property="ibTableView" destination="wbo-qd-YBi" id="jc2-B0-GxP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
